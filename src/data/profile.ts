@@ -11,11 +11,15 @@ export interface ProfileLink {
 export const profile = {
   name: "Matheus Ramos",
   handle: "@ramosxzz",
-  bio: "Dev. Gamer. Sempre explorando.",
+  // Aparece abaixo do nome: "Dev & gamer, sempre explorando."
+  role: "Dev & gamer",
+  tagline: "sempre explorando.",
+  location: "Brasil",
+  about:
+    "Escrevo código, jogo quando dá e vivo testando ideias novas. Aqui ficam os lugares onde você me encontra.",
   // Troque por outra foto colocando o arquivo em /public/images/
   avatar: "/images/profile.jpg",
-  // "疾風" (shippū) = vento veloz / rajada
-  kanji: "疾風",
+  available: "Aberto a novos projetos",
 };
 
 export const links: ProfileLink[] = [
