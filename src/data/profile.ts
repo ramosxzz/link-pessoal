@@ -54,6 +54,5 @@ export const links: ProfileLink[] = [
 // Seção "Agora": o que você está fazendo no momento. Edite à vontade.
 export const now: NowItem[] = [
   { label: "Construindo", value: "Projetos pessoais" },
-  { label: "Jogando", value: "Valorant" },
   { label: "Aprendendo", value: "Algo novo toda semana" },
 ];
