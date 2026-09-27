@@ -1,6 +1,6 @@
 import { useEffect, useState, type CSSProperties } from "react";
 import { ArrowUpRight, Github, Instagram, Moon, Sun } from "lucide-react";
-import { links, now, profile, type LinkIcon } from "./data/profile";
+import { links, profile, type LinkIcon } from "./data/profile";
 
 function XLogo({ size = 18 }: { size?: number }) {
   return (
@@ -132,26 +132,9 @@ export default function App() {
             ))}
           </ul>
         </section>
-
-        {now.length > 0 && (
-          <section className="section reveal" style={reveal(7)} aria-labelledby="agora">
-            <h2 id="agora" className="label">
-              Agora
-            </h2>
-            <dl className="now-list">
-              {now.map((item) => (
-                <div className="now-row" key={item.label}>
-                  <dt>{item.label}</dt>
-                  <span className="now-rule" aria-hidden="true" />
-                  <dd>{item.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        )}
       </main>
 
-      <footer className="footer reveal" style={reveal(8)}>
+      <footer className="footer reveal" style={reveal(7)}>
         <span className="mono muted">
           © {year} {profile.name}
         </span>

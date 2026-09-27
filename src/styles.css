@@ -303,36 +303,6 @@ main {
   transform: translate(2px, -2px);
 }
 
-/* ---------- agora ---------- */
-
-.now-list {
-  margin: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.now-row {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.now-row dt {
-  color: var(--muted);
-}
-
-.now-row dd {
-  margin: 0;
-  text-align: right;
-}
-
-.now-rule {
-  flex: 1;
-  min-width: 16px;
-  border-bottom: 1px dashed var(--border);
-  transform: translateY(-4px);
-}
-
 /* ---------- footer ---------- */
 
 .footer {

@@ -8,11 +8,6 @@ export interface ProfileLink {
   blurb: string;
 }
 
-export interface NowItem {
-  label: string;
-  value: string;
-}
-
 export const profile = {
   name: "Matheus Ramos",
   handle: "@ramosxzz",
@@ -49,10 +44,4 @@ export const links: ProfileLink[] = [
     handle: "@ramoszzxz",
     blurb: "Pensamentos soltos",
   },
-];
-
-// Seção "Agora": o que você está fazendo no momento. Edite à vontade.
-export const now: NowItem[] = [
-  { label: "Construindo", value: "Projetos pessoais" },
-  { label: "Aprendendo", value: "Algo novo toda semana" },
 ];
