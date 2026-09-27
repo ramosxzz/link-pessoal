@@ -8,14 +8,23 @@ export interface ProfileLink {
   blurb: string;
 }
 
+export interface NowItem {
+  label: string;
+  value: string;
+}
+
 export const profile = {
   name: "Matheus Ramos",
   handle: "@ramosxzz",
-  bio: "Dev. Gamer. Sempre explorando.",
+  // Aparece abaixo do nome: "Dev & gamer, sempre explorando."
+  role: "Dev & gamer",
+  tagline: "sempre explorando.",
+  location: "Brasil",
+  about:
+    "Escrevo código, jogo quando dá e vivo testando ideias novas. Aqui ficam os lugares onde você me encontra.",
   // Troque por outra foto colocando o arquivo em /public/images/
   avatar: "/images/profile.jpg",
-  // "疾風" (shippū) = vento veloz / rajada
-  kanji: "疾風",
+  available: "Aberto a novos projetos",
 };
 
 export const links: ProfileLink[] = [
@@ -40,4 +49,11 @@ export const links: ProfileLink[] = [
     handle: "@ramoszzxz",
     blurb: "Pensamentos soltos",
   },
+];
+
+// Seção "Agora": o que você está fazendo no momento. Edite à vontade.
+export const now: NowItem[] = [
+  { label: "Construindo", value: "Projetos pessoais" },
+  { label: "Jogando", value: "Valorant" },
+  { label: "Aprendendo", value: "Algo novo toda semana" },
 ];

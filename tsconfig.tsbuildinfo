@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/components/dither.tsx","./src/components/personalspace.tsx","./src/components/profileheader.tsx","./src/components/tiltedcard.tsx","./src/components/windstreaks.tsx","./src/data/profile.ts"],"version":"5.9.3"}
+{"root":["./src/App.tsx","./src/main.tsx","./src/data/profile.ts"],"version":"5.9.3"}
