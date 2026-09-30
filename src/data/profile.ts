@@ -5,21 +5,19 @@ export interface ProfileLink {
   url: string;
   icon: LinkIcon;
   handle: string;
-  blurb: string;
 }
 
 export const profile = {
   name: "Matheus Ramos",
+  // Nome em katakana, aparece embaixo do nome
+  nameJa: "マテウス・ラモス",
   handle: "@ramosxzz",
-  // Aparece abaixo do nome: "Dev & gamer, sempre explorando."
-  role: "Dev & gamer",
-  tagline: "sempre explorando.",
-  location: "Brasil",
-  about:
-    "Escrevo código, jogo quando dá e vivo testando ideias novas. Aqui ficam os lugares onde você me encontra.",
+  // Frase vertical ao lado do nome: "em silêncio, sempre em frente."
+  phrase: "静かに、前へ。",
+  // "疾風" (shippū) = vento veloz
+  kanji: "疾風",
   // Troque por outra foto colocando o arquivo em /public/images/
   avatar: "/images/profile.jpg",
-  available: "Aberto a novos projetos",
 };
 
 export const links: ProfileLink[] = [
@@ -28,20 +26,17 @@ export const links: ProfileLink[] = [
     url: "https://github.com/ramosxzz",
     icon: "github",
     handle: "@ramosxzz",
-    blurb: "Projetos e experimentos",
   },
   {
     title: "Instagram",
     url: "https://www.instagram.com/matheusz_rms/",
     icon: "instagram",
     handle: "@matheusz_rms",
-    blurb: "O dia a dia",
   },
   {
     title: "X",
     url: "https://x.com/ramoszzxz",
     icon: "x",
     handle: "@ramoszzxz",
-    blurb: "Pensamentos soltos",
   },
 ];
