@@ -94,6 +94,19 @@ main {
   color: var(--subtle);
 }
 
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.clock {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--subtle);
+}
+
 .theme-toggle {
   display: grid;
   place-items: center;

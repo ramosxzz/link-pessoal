@@ -34,11 +34,31 @@ function useTheme() {
   return [dark, () => setDark((d) => !d)] as const;
 }
 
+function useClock() {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const format = new Intl.DateTimeFormat("pt-BR", {
+      timeZone: "America/Sao_Paulo",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+    const update = () => setTime(format.format(new Date()));
+    update();
+    const id = window.setInterval(update, 15000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return time || "--:--";
+}
+
 // Atraso escalonado para a animação de entrada de cada bloco.
 const reveal = (step: number): CSSProperties => ({ "--d": `${step * 80}ms` }) as CSSProperties;
 
 export default function App() {
   const [dark, toggleTheme] = useTheme();
+  const time = useClock();
   const year = new Date().getFullYear();
 
   return (
@@ -47,14 +67,17 @@ export default function App() {
         <span className="kanji" lang="ja">
           {profile.kanji}
         </span>
-        <button
-          type="button"
-          className="theme-toggle"
-          onClick={toggleTheme}
-          aria-label={dark ? "Ativar tema claro" : "Ativar tema escuro"}
-        >
-          {dark ? <Sun size={14} strokeWidth={1.6} /> : <Moon size={14} strokeWidth={1.6} />}
-        </button>
+        <div className="topbar-right">
+          <span className="clock">Brasil · {time}</span>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={dark ? "Ativar tema claro" : "Ativar tema escuro"}
+          >
+            {dark ? <Sun size={14} strokeWidth={1.6} /> : <Moon size={14} strokeWidth={1.6} />}
+          </button>
+        </div>
       </nav>
 
       <main>
