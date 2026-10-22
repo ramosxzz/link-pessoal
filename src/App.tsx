@@ -1,6 +1,7 @@
 import { useEffect, useState, type CSSProperties } from "react";
 import { ArrowUpRight, Github, Instagram, Moon, Sun } from "lucide-react";
-import { links, profile, type LinkIcon } from "./data/profile";
+import HoloCard from "./components/HoloCard";
+import { card, links, profile, type LinkIcon } from "./data/profile";
 
 function XLogo({ size = 18 }: { size?: number }) {
   return (
@@ -11,9 +12,9 @@ function XLogo({ size = 18 }: { size?: number }) {
 }
 
 function LinkGlyph({ icon }: { icon: LinkIcon }) {
-  if (icon === "github") return <Github size={17} strokeWidth={1.6} aria-hidden="true" />;
-  if (icon === "instagram") return <Instagram size={17} strokeWidth={1.6} aria-hidden="true" />;
-  return <XLogo size={15} />;
+  if (icon === "github") return <Github strokeWidth={1.8} aria-hidden="true" />;
+  if (icon === "instagram") return <Instagram strokeWidth={1.8} aria-hidden="true" />;
+  return <XLogo />;
 }
 
 function useTheme() {
@@ -80,47 +81,84 @@ export default function App() {
         </div>
       </nav>
 
-      <main>
-        <header className="hero">
-          <div className="hero-main">
-            <img
-              className="avatar reveal"
-              style={reveal(1)}
-              src={profile.avatar}
-              alt={`Foto de ${profile.name}`}
-              width={96}
-              height={96}
-            />
-            <h1 className="name reveal" style={reveal(2)}>
-              {profile.name}
-            </h1>
-            <p className="name-ja reveal" style={reveal(3)} lang="ja">
-              {profile.nameJa}
-            </p>
-          </div>
-
-          <p className="phrase reveal" style={reveal(4)} lang="ja">
-            {profile.phrase}
-          </p>
-        </header>
-
-        <ul className="link-list reveal" style={reveal(5)}>
-          {links.map((link) => (
-            <li key={link.url}>
-              <a className="link-row" href={link.url} target="_blank" rel="noopener noreferrer">
-                <span className="link-icon">
-                  <LinkGlyph icon={link.icon} />
+      <main className="stage">
+        <h1 className="sr-only">{profile.name}</h1>
+        <div className="stage-card reveal" style={reveal(1)}>
+          <HoloCard
+            image={profile.avatar}
+            alt={`Foto de ${profile.name}`}
+            preset="bursts"
+            foilColor="#e2e6ec"
+            intensity={0.85}
+            scale={1}
+            edgeSparkle={0.8}
+            frame={4}
+            glare={0.5}
+            tiltMax={14}
+            hoverScale={1.04}
+            radius={14}
+            width={320}
+            idle
+            shadow
+            header={
+              <div className="pk-head">
+                <span className="pk-stage" lang="ja">
+                  {card.stage}
                 </span>
-                <span className="link-title">{link.title}</span>
-                <span className="link-handle">{link.handle}</span>
-                <ArrowUpRight className="link-arrow" size={15} strokeWidth={1.6} aria-hidden="true" />
-              </a>
-            </li>
-          ))}
-        </ul>
+                <span className="pk-name">{profile.name}</span>
+                <span className="pk-hp">
+                  <small>HP</small>
+                  {card.hp}
+                </span>
+                <span className="pk-type" lang="ja" title={card.typeLabel}>
+                  {card.type}
+                </span>
+              </div>
+            }
+          >
+            <p className="pk-info" lang="ja">
+              {card.info}
+            </p>
+
+            <ul className="pk-moves">
+              {links.map((link) => (
+                <li key={link.url}>
+                  <a className="pk-move" href={link.url} target="_blank" rel="noopener noreferrer">
+                    <span className="pk-energy">
+                      <LinkGlyph icon={link.icon} />
+                    </span>
+                    <span className="pk-move-text">
+                      <span className="pk-move-name">{link.title}</span>
+                      <span className="pk-move-handle">{link.handle}</span>
+                    </span>
+                    <ArrowUpRight className="pk-move-arrow" aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <dl className="pk-stats">
+              {card.stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt lang="ja">{stat.label}</dt>
+                  <dd>{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <p className="pk-flavor">
+              <span lang="ja">{profile.phrase}</span> {card.flavor}
+            </p>
+
+            <div className="pk-foot">
+              <span>illus. {profile.handle.slice(1)}</span>
+              <span>{card.number} ★</span>
+            </div>
+          </HoloCard>
+        </div>
       </main>
 
-      <footer className="footer reveal" style={reveal(6)}>
+      <footer className="footer reveal" style={reveal(2)}>
         <span>© {year}</span>
         <span>{profile.handle}</span>
       </footer>
