@@ -175,6 +175,7 @@ export default function HoloCard({
             <div className="holo__art">
               <img src={image} alt={alt} draggable={false} />
               <div className="holo__shine" aria-hidden="true" />
+              <button className="holo__flip-target" type="button" onClick={() => setFlipped(true)} aria-label="Ver verso da carta" />
             </div>
             {children}
           </div>
@@ -183,16 +184,13 @@ export default function HoloCard({
           <div className="holo__glare" aria-hidden="true" />
         </div>
         </div>
-        <div className="holo__back" aria-hidden={!flipped}>
+        <div className="holo__back" {...(!flipped ? { inert: "" } : {})} aria-hidden={!flipped}>
           <img src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="Verso azul da carta com Poké Bola e logotipo Pokémon" draggable={false} />
           <div className="holo__glare" />
+          <button className="holo__flip-target" type="button" onClick={() => setFlipped(false)} aria-label="Ver frente da carta" />
         </div>
         </div>
       </div>
-      <button className="card-flip" type="button" onClick={() => setFlipped(value => !value)} aria-pressed={flipped}>
-        <span aria-hidden="true">⤾</span> {flipped ? "Ver frente da carta" : "Virar a carta"}
-      </button>
-      <p className="card-hint">Mova para explorar o brilho · Toque para virar</p>
     </div>
   );
 }

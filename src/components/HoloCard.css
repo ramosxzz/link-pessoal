@@ -242,9 +242,6 @@
 .holo__card { height: 100%; background: linear-gradient(125deg,#9ea1b0,#fff 19%,#fff4d6 40%,#b5c9d6 64%,#fff 85%,#bdabbc); box-shadow: inset 0 0 0 1px #fff; }
 .holo__art .holo__shine { mix-blend-mode: color-dodge; opacity: .42; background-image: radial-gradient(ellipse at var(--px) var(--py),#ffffff80,transparent 55%), repeating-linear-gradient(120deg,#ff658933,#ffd66588 14%,#76efb566 28%,#4dc5ff88 42%,#a57cfb77 57%,#ff658955 70%); }
 .holo__art::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle,#fff 0 1px,transparent 2px) 0 0 / 31px 47px, radial-gradient(circle,#adf5ff 0 1px,transparent 3px) 17px 23px / 59px 71px; mix-blend-mode: screen; opacity: .5; }
-.card-flip { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 29px auto 0; padding: 9px 18px; border: 1px solid var(--ring); border-radius: 30px; background: var(--surface); color: var(--fg); cursor: pointer; font-size: 12px; }
-.card-flip span { font-size: 20px; line-height: 1; }
-.card-flip:hover { border-color: #bf9a48; }
-.card-flip:focus-visible { outline: 2px solid #cba952; outline-offset: 4px; }
-.card-hint { text-align: center; color: var(--muted); font-size: 10px; letter-spacing: .025em; margin: 12px -15px 0; }
+.holo__flip-target { position: absolute; inset: 0; z-index: 5; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; border-radius: inherit; }
+.holo__flip-target:focus-visible { outline: 3px solid #6b4f94; outline-offset: -5px; }
 @media(prefers-reduced-motion: reduce) { .holo__flipper { transition: none; } }

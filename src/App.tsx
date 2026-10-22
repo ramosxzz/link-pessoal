@@ -95,9 +95,9 @@ export default function App() {
             frame={5}
             glare={0.5}
             tiltMax={14}
-            hoverScale={1.04}
+            hoverScale={1.015}
             radius={13}
-            width={360}
+            width={520}
             idle
             shadow
             header={
@@ -105,7 +105,7 @@ export default function App() {
                 <span className="pk-stage">
                   {card.stage}
                 </span>
-                <span className="pk-name">{profile.name}<em>V-ASTRO</em></span>
+                <span className="pk-name">{profile.name}</span>
                 <span className="pk-hp">
                   <small>PS</small>
                   {card.hp}
@@ -120,11 +120,12 @@ export default function App() {
               {card.info}
             </p>
 
-            <div className="pk-power">Poder V-ASTRO</div>
+            <section className="pk-details" aria-label="Redes sociais e atributos">
+            <div className="pk-power"><span>Poder V-ASTRO</span><span className="pk-power-label">CONEXÕES</span></div>
             <ul className="pk-moves">
               {links.map((link) => (
                 <li key={link.url}>
-                  <a className="pk-move" href={link.url} target="_blank" rel="noopener noreferrer">
+                  <a className={`pk-move pk-move--${link.icon}`} href={link.url} target="_blank" rel="noopener noreferrer">
                     <span className="pk-energy">
                       <LinkGlyph icon={link.icon} />
                     </span>
@@ -148,13 +149,14 @@ export default function App() {
             </dl>
 
             <p className="pk-flavor">
-              <span>{profile.phrase}</span> {card.flavor}
+              <span>{profile.phrase}</span>
             </p>
 
             <div className="pk-foot">
               <span>illus. {profile.handle.slice(1)} · Edição pessoal</span>
               <span>★ {card.number} · HOLO</span>
             </div>
+            </section>
           </HoloCard>
         </div>
       </main>
