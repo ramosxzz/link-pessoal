@@ -1,4 +1,4 @@
-import { useEffect, useRef, type CSSProperties, type PointerEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent, type ReactNode } from "react";
 import "./HoloCard.css";
 
 export type HoloPreset = "bursts" | "rainbow";
@@ -65,6 +65,7 @@ export default function HoloCard({
   shadow = true,
   className = "",
 }: HoloCardProps) {
+  const [flipped, setFlipped] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const pointer = useRef<{ x: number; y: number } | null>(null);
 
@@ -164,6 +165,10 @@ export default function HoloCard({
       onPointerUp={(e) => e.pointerType !== "mouse" && release()}
     >
       <div className="holo__rotator">
+        <div className={`holo__flipper${flipped ? " is-flipped" : ""}`} onClick={(event) => {
+          if (!(event.target as HTMLElement).closest("a, button")) setFlipped(value => !value);
+        }}>
+        <div className="holo__front" {...(flipped ? { inert: "" } : {})} aria-hidden={flipped}>
         <div className="holo__card">
           <div className="holo__face">
             {header}
@@ -177,7 +182,17 @@ export default function HoloCard({
           <div className="holo__sparkle" aria-hidden="true" />
           <div className="holo__glare" aria-hidden="true" />
         </div>
+        </div>
+        <div className="holo__back" aria-hidden={!flipped}>
+          <img src="/images/card-back.svg" alt="Verso azul da carta com Poké Bola e logotipo Pokémon" draggable={false} />
+          <div className="holo__glare" />
+        </div>
+        </div>
       </div>
+      <button className="card-flip" type="button" onClick={() => setFlipped(value => !value)} aria-pressed={flipped}>
+        <span aria-hidden="true">⤾</span> {flipped ? "Ver frente da carta" : "Virar a carta"}
+      </button>
+      <p className="card-hint">Mova para explorar o brilho · Toque para virar</p>
     </div>
   );
 }

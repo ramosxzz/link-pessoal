@@ -10,12 +10,12 @@ export interface ProfileLink {
 export const profile = {
   name: "Matheus Ramos",
   // Nome em katakana
-  nameJa: "マテウス・ラモス",
+  nameJa: "Matheus Ramos",
   handle: "@ramosxzz",
   // "em silêncio, sempre em frente."
-  phrase: "静かに、前へ。",
+  phrase: "Em silêncio, sempre em frente.",
   // "疾風" (shippū) = vento veloz
-  kanji: "疾風",
+  kanji: "COLEÇÃO PESSOAL",
   // Troque por outra foto colocando o arquivo em /public/images/
   avatar: "/images/profile.jpg",
 };
@@ -44,18 +44,18 @@ export const links: ProfileLink[] = [
 // Textos da carta. Os rótulos em japonês são os mesmos das cartas Pokémon
 // japonesas: たね = básico, 弱点 = fraqueza, 抵抗力 = resistência, にげる = recuo.
 export const card = {
-  stage: "たね",
-  hp: 99,
+  stage: "BÁSICO",
+  hp: 120,
   // 風 = vento (o "tipo" da carta)
-  type: "風",
-  typeLabel: "Tipo vento",
+  type: "✦",
+  typeLabel: "Tipo incolor",
   // "No.0001 · Pokémon desenvolvedor · Matheus Ramos (katakana)"
-  info: `No.0001 · 開発ポケモン · ${profile.nameJa}`,
+  info: "Nº 001 · Desenvolvedor · Edição holográfica",
   stats: [
-    { label: "弱点", value: "segunda ×2" },
-    { label: "抵抗力", value: "bugs −30" },
-    { label: "にげる", value: "●" },
+    { label: "fraqueza", value: "segunda ×2" },
+    { label: "resistência", value: "bugs −30" },
+    { label: "recuo", value: "●" },
   ],
-  flavor: "Em silêncio, sempre em frente.",
+  flavor: "Transforma ideias em experiências. Sua próxima evolução está sempre em construção.",
   number: "001/001",
 };

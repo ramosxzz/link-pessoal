@@ -65,7 +65,7 @@ export default function App() {
   return (
     <div className="page">
       <nav className="topbar reveal" style={reveal(0)}>
-        <span className="kanji" lang="ja">
+        <span className="kanji">
           {profile.kanji}
         </span>
         <div className="topbar-right">
@@ -87,36 +87,36 @@ export default function App() {
           <HoloCard
             image={profile.avatar}
             alt={`Foto de ${profile.name}`}
-            preset="bursts"
-            foilColor="#e2e6ec"
+            preset="rainbow"
+            foilColor="#f7cf43"
             intensity={0.85}
             scale={1}
             edgeSparkle={0.8}
-            frame={4}
+            frame={10}
             glare={0.5}
             tiltMax={14}
             hoverScale={1.04}
-            radius={14}
-            width={320}
+            radius={16}
+            width={360}
             idle
             shadow
             header={
               <div className="pk-head">
-                <span className="pk-stage" lang="ja">
+                <span className="pk-stage">
                   {card.stage}
                 </span>
                 <span className="pk-name">{profile.name}</span>
                 <span className="pk-hp">
-                  <small>HP</small>
+                  <small>PS</small>
                   {card.hp}
                 </span>
-                <span className="pk-type" lang="ja" title={card.typeLabel}>
+                <span className="pk-type" title={card.typeLabel}>
                   {card.type}
                 </span>
               </div>
             }
           >
-            <p className="pk-info" lang="ja">
+            <p className="pk-info">
               {card.info}
             </p>
 
@@ -140,19 +140,19 @@ export default function App() {
             <dl className="pk-stats">
               {card.stats.map((stat) => (
                 <div key={stat.label}>
-                  <dt lang="ja">{stat.label}</dt>
+                  <dt>{stat.label}</dt>
                   <dd>{stat.value}</dd>
                 </div>
               ))}
             </dl>
 
             <p className="pk-flavor">
-              <span lang="ja">{profile.phrase}</span> {card.flavor}
+              <span>{profile.phrase}</span> {card.flavor}
             </p>
 
             <div className="pk-foot">
               <span>illus. {profile.handle.slice(1)}</span>
-              <span>{card.number} ★</span>
+              <span>★ {card.number} · HOLO</span>
             </div>
           </HoloCard>
         </div>
