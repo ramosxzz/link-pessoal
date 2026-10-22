@@ -1,5 +1,5 @@
 import { useEffect, useState, type CSSProperties } from "react";
-import { ArrowUpRight, Github, Instagram, Moon, Sun } from "lucide-react";
+import { ArrowUpRight, Github, Instagram, Moon, Sun, Star } from "lucide-react";
 import HoloCard from "./components/HoloCard";
 import { card, links, profile, type LinkIcon } from "./data/profile";
 
@@ -88,15 +88,15 @@ export default function App() {
             image={profile.avatar}
             alt={`Foto de ${profile.name}`}
             preset="rainbow"
-            foilColor="#f7cf43"
+            foilColor="#e2e6ec"
             intensity={0.85}
             scale={1}
             edgeSparkle={0.8}
-            frame={10}
+            frame={5}
             glare={0.5}
             tiltMax={14}
             hoverScale={1.04}
-            radius={16}
+            radius={13}
             width={360}
             idle
             shadow
@@ -105,13 +105,13 @@ export default function App() {
                 <span className="pk-stage">
                   {card.stage}
                 </span>
-                <span className="pk-name">{profile.name}</span>
+                <span className="pk-name">{profile.name}<em>V-ASTRO</em></span>
                 <span className="pk-hp">
                   <small>PS</small>
                   {card.hp}
                 </span>
                 <span className="pk-type" title={card.typeLabel}>
-                  {card.type}
+                  <Star fill="currentColor" size={18} aria-hidden="true" />
                 </span>
               </div>
             }
@@ -120,6 +120,7 @@ export default function App() {
               {card.info}
             </p>
 
+            <div className="pk-power">Poder V-ASTRO</div>
             <ul className="pk-moves">
               {links.map((link) => (
                 <li key={link.url}>
@@ -151,7 +152,7 @@ export default function App() {
             </p>
 
             <div className="pk-foot">
-              <span>illus. {profile.handle.slice(1)}</span>
+              <span>illus. {profile.handle.slice(1)} · Edição pessoal</span>
               <span>★ {card.number} · HOLO</span>
             </div>
           </HoloCard>

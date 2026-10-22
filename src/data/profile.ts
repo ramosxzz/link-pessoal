@@ -44,13 +44,13 @@ export const links: ProfileLink[] = [
 // Textos da carta. Os rótulos em japonês são os mesmos das cartas Pokémon
 // japonesas: たね = básico, 弱点 = fraqueza, 抵抗力 = resistência, にげる = recuo.
 export const card = {
-  stage: "BÁSICO",
-  hp: 120,
+  stage: "V-ASTRO",
+  hp: 280,
   // 風 = vento (o "tipo" da carta)
   type: "✦",
   typeLabel: "Tipo incolor",
   // "No.0001 · Pokémon desenvolvedor · Matheus Ramos (katakana)"
-  info: "Nº 001 · Desenvolvedor · Edição holográfica",
+  info: "Evolui de Matheus V · Desenvolvedor",
   stats: [
     { label: "fraqueza", value: "segunda ×2" },
     { label: "resistência", value: "bugs −30" },

@@ -184,7 +184,7 @@ export default function HoloCard({
         </div>
         </div>
         <div className="holo__back" aria-hidden={!flipped}>
-          <img src="/images/card-back.svg" alt="Verso azul da carta com Poké Bola e logotipo Pokémon" draggable={false} />
+          <img src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="Verso azul da carta com Poké Bola e logotipo Pokémon" draggable={false} />
           <div className="holo__glare" />
         </div>
         </div>

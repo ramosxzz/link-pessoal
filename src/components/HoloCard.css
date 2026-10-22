@@ -239,7 +239,7 @@
 .holo__front { transform: rotateY(0deg); }
 .holo__back { transform: rotateY(180deg); overflow: hidden; box-shadow: 0 18px 45px #0007; }
 .holo__back > img { display: block; width: 100%; height: 100%; }
-.holo__card { height: 100%; background: linear-gradient(125deg,#a77912,#ffdf61 19%,#fff3a3 40%,#dbad2e 64%,#f9d85a 85%,#af7913); box-shadow: inset 0 0 0 1px #fce7a1; }
+.holo__card { height: 100%; background: linear-gradient(125deg,#9ea1b0,#fff 19%,#fff4d6 40%,#b5c9d6 64%,#fff 85%,#bdabbc); box-shadow: inset 0 0 0 1px #fff; }
 .holo__art .holo__shine { mix-blend-mode: color-dodge; opacity: .42; background-image: radial-gradient(ellipse at var(--px) var(--py),#ffffff80,transparent 55%), repeating-linear-gradient(120deg,#ff658933,#ffd66588 14%,#76efb566 28%,#4dc5ff88 42%,#a57cfb77 57%,#ff658955 70%); }
 .holo__art::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle,#fff 0 1px,transparent 2px) 0 0 / 31px 47px, radial-gradient(circle,#adf5ff 0 1px,transparent 3px) 17px 23px / 59px 71px; mix-blend-mode: screen; opacity: .5; }
 .card-flip { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 29px auto 0; padding: 9px 18px; border: 1px solid var(--ring); border-radius: 30px; background: var(--surface); color: var(--fg); cursor: pointer; font-size: 12px; }
